@@ -1,11 +1,33 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>测试页</title>
-  </head>
-  <body>
-    <pre style="font-family:monospace;margin:24px">ok</pre>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dapeng — 文章</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+    <section style="margin-top:20px">
+      <ul class="articles">
+        <li class="article-item">
+          <a href="大凉山.html">
+            <h3>大凉山</h3>
+            <p class="excerpt">我是一列火车 / 行驶在大凉山 / 清晨从普雄出发 …</p>
+          </a>
+        </li>
+        <!-- 如需新增文章，可在此处添加 <li> -->
+      </ul>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Dapeng</div>
+    </footer>
+  </main>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
 </html>

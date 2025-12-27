@@ -1,0 +1,87 @@
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+    line-height: 1.9;
+    color: #222;
+    padding: 24px;
+    background: #fafafa;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0 0 6px 0;
+}
+
+h2 {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 18px 0;
+}
+
+blockquote {
+    margin: 18px 0;
+    padding-left: 14px;
+    border-left: 3px solid #ddd;
+    color: #444;
+    background: #f6f8fa;
+}
+
+p {
+    margin: 14px 0;
+    text-indent: 2em;
+}
+
+.poem {
+    white-space: pre-wrap;
+    /* preserve line breaks */
+    margin: 0px 0;
+    text-indent: 0;
+    /* no indent for poems */
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+footer {
+    margin-top: 30px;
+    color: #666;
+    font-size: 13px;
+}
+
+.articles {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+}
+
+.article-item {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+.article-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block
+}
+
+.article-item h3 {
+    margin: 0;
+    font-size: 18px
+}
+
+.article-item .excerpt {
+    margin: 6px 0 0 0;
+    color: #666;
+    font-size: 14px
+}
+
+.article-item:hover {
+    background: #fafafa
+}
