@@ -9,6 +9,16 @@
 </head>
 
 <body>
+  <!-- Password Protection Modal -->
+  <div id="passwordModal" class="password-modal">
+    <div class="password-modal-content">
+      <h2>请输入访问口令</h2>
+      <input type="password" id="passwordInput" placeholder="输入口令..." />
+      <button onclick="checkPassword()">进入</button>
+      <div id="errorMsg" class="error">口令错误，请重试</div>
+    </div>
+  </div>
+
   <main class="container">
     <section style="margin-top:20px">
       <ul class="articles">
@@ -33,7 +43,7 @@
             <p class="excerpt">这儿地处中国西南，位于北纬30度线上，典型的喀斯特丘陵地貌 …</p>
           </a>
         </li>
-        <!-- 如需新增文章，可在此处添加 <li> -->
+
       </ul>
     </section>
 
@@ -42,7 +52,41 @@
     </footer>
   </main>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    const PASSWORD = 'dapeng'; // 设置访问口令
+
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (input === PASSWORD) {
+        // 密码正确，隐藏模态框
+        document.getElementById('passwordModal').classList.add('hidden');
+        // 保存到 sessionStorage，刷新页面时仍需重新输入
+        sessionStorage.setItem('authenticated', 'true');
+      } else {
+        // 密码错误，显示错误信息
+        errorMsg.classList.add('show');
+        document.getElementById('passwordInput').value = '';
+      }
+    }
+
+    // 回车键提交
+    document.getElementById('passwordInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    // 页面加载时检查是否已认证
+    window.addEventListener('load', function () {
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        document.getElementById('passwordModal').classList.add('hidden');
+      }
+      // 自动聚焦到密码输入框
+      document.getElementById('passwordInput').focus();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
